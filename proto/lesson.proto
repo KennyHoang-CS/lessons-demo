@@ -1,0 +1,76 @@
+syntax = "proto3";
+
+package lesson;
+
+option go_package = "github.com/kenny/lessons/demo/pb;pb";
+
+service ContentService {
+  rpc CreateContent(CreateContentRequest) returns (CreateContentResponse);
+  rpc GetContent(GetContentRequest) returns (GetContentResponse);
+}
+
+service MetadataService {
+  rpc CreateLesson(CreateLessonRequest) returns (CreateLessonResponse);
+  rpc CreateVersion(CreateVersionRequest) returns (CreateVersionResponse);
+  rpc PublishVersion(PublishVersionRequest) returns (PublishVersionResponse);
+  rpc GetVersion(GetVersionRequest) returns (GetVersionResponse);
+}
+
+service DiffService {
+  rpc DiffContent(DiffContentRequest) returns (DiffContentResponse);
+}
+
+message CreateContentRequest {
+  string body = 1;
+}
+message CreateContentResponse {
+  string content_id = 1;
+}
+
+message GetContentRequest {
+  string content_id = 1;
+}
+message GetContentResponse {
+  string body = 1;
+}
+
+message CreateLessonRequest {
+  string content_id = 1;
+}
+message CreateLessonResponse {
+  string root_id = 1;
+  int32 version_number = 2;
+}
+
+message CreateVersionRequest {
+  string root_id = 1;
+  string content_id = 2;
+}
+message CreateVersionResponse {
+  string root_id = 1;
+  int32 version_number = 2;
+}
+
+message PublishVersionRequest {
+  string root_id = 1;
+  int32 version_number = 2;
+}
+message PublishVersionResponse {}
+
+message GetVersionRequest {
+  string root_id = 1;
+  int32 version_number = 2;
+}
+message GetVersionResponse {
+  string root_id = 1;
+  int32 version_number = 2;
+  string content_id = 3;
+}
+
+message DiffContentRequest {
+  string from_content_id = 1;
+  string to_content_id = 2;
+}
+message DiffContentResponse {
+  string diff = 1;
+}

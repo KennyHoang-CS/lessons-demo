@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Lesson Demo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>Lesson Versioning Demo</h1>
+
+  <section>
+    <h2>Create Lesson</h2>
+    <textarea id="lessonInput" placeholder="Write lesson content..."></textarea>
+    <button onclick="createLesson()">Create Lesson</button>
+    <pre id="createLessonResult"></pre>
+  </section>
+
+  <section>
+    <h2>Create Version</h2>
+    <input id="rootId" placeholder="Root ID" />
+    <textarea id="versionInput" placeholder="New version content..."></textarea>
+    <button onclick="createVersion()">Create Version</button>
+    <pre id="createVersionResult"></pre>
+  </section>
+
+  <section>
+    <h2>Publish Version</h2>
+    <input id="pubRootId" placeholder="Root ID" />
+    <input id="pubVersion" placeholder="Version #" />
+    <button onclick="publishVersion()">Publish</button>
+    <pre id="publishResult"></pre>
+  </section>
+
+  <section>
+    <h2>Get Version</h2>
+    <input id="getRootId" placeholder="Root ID" />
+    <input id="getVersion" placeholder="Version #" />
+    <button onclick="getVersion()">Get Version</button>
+    <pre id="getVersionResult"></pre>
+  </section>
+
+  <section>
+    <h2>Diff</h2>
+    <input id="diffFrom" placeholder="From content_id" />
+    <input id="diffTo" placeholder="To content_id" />
+    <button onclick="getDiff()">Diff</button>
+    <pre id="diffResult"></pre>
+  </section>
+
+  <section>
+    <h2>Clone Lesson</h2>
+    <input id="cloneRootId" placeholder="Source Root ID" />
+    <input id="cloneVersion" placeholder="Source Version #" />
+    <button onclick="cloneLesson()">Clone</button>
+    <pre id="cloneResult"></pre>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
