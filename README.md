@@ -1,6 +1,7 @@
 # About 
-A 90-minutes demo utilizing rest api, grpcs for backend <-> backend communication. Next on the to-do list: work on the infrastructure, such as adding tests (i.e unit tests), remove hard coded env values, and more.  
+Demo utilizing rest api, grpcs for backend <-> backend communication. Next on the to-do list: work on the infrastructure, such as adding tests (i.e unit tests), remove hard coded env values, and more.  
 
+Time spent on this: 90-minutes 
 
 # Lesson Versioning System
 
